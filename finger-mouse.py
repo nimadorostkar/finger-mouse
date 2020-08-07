@@ -1,7 +1,3 @@
-#finger-mouse-control
-#A simple Python script to control the cursor through the webcam using the motion of your fingertip, using some basic image processing #techniques. Haven't added any click functionality yet.
-
-
 
 import numpy as np
 import cv2
