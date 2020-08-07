@@ -1,4 +1,3 @@
-
 import numpy as np
 import cv2
 import sys
@@ -86,6 +85,7 @@ while(True):
         # Plotting centroid
         cv2.circle(roi, (centroid_x, centroid_y), 10, (0, 255, 255), -1)
 
+        
         # Next step is to extract the vertices from approx_polygon because for
         # some reason cv2 represents polygon vertices as [[x, y]] (note the extra square brackets)
         vertices = np.array([vertex[0] for vertex in max_contour])
@@ -94,6 +94,7 @@ while(True):
         cv2.circle(roi, tuple(max_vertex), 10, (0, 0, 255), -1)
         cv2.line(roi, (centroid_x, centroid_y), tuple(max_vertex), (0, 0, 0), 2)
 
+        
     frame = cv2.flip(frame, 1)
     roi = cv2.flip(roi, 1)
     # cv2.imshow('Frame', frame)
@@ -111,5 +112,6 @@ while(True):
     if(key == ord('q') or key == ord('Q')):
         break
 
+        
 cap.release()
 cv2.destroyAllWindows()
